@@ -12,6 +12,16 @@ def forecast(request):
     )
     res.raise_for_status()
 
-    data = res.json()
+    data = {}
 
-    return JsonResponse(data, safe=False)
+    for each in res.json():
+        if each["channelType"] != "general":
+            continue
+
+        if each["type"] == "CurrentInterval":
+            data["now"] = each
+
+        else:
+            data.setdefault("future", []).append(each)
+
+    return JsonResponse(data)
