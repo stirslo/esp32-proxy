@@ -3,7 +3,10 @@ name = "esp32-proxy"
 description = "Proxy data to an ESP32"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "django>=4.2.21",
+    "requests>=2.32.3",
+]
 dynamic = ["version"]
 
 [build-system]
