@@ -1,0 +1,12 @@
+[project]
+name = "esp32-proxy"
+description = "Proxy data to an ESP32"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools-scm"]
+
+[tool.setuptools_scm]
